@@ -95,6 +95,10 @@ Thorfile
 .vagrant
 Vagrantfile
 
+# Kitchen #
+###########
+.kitchen
+
 # Travis #
 ##########
 .travis.yml

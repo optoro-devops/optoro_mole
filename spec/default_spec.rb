@@ -9,6 +9,26 @@ describe 'optoro_mole::default' do
             node.set['lsb']['codename'] = value['codename']
           end.converge(described_recipe)
         end
+
+        it 'should create the printer user' do
+          expect(chef_run).to create_users_manage('printer')
+        end
+
+        it 'should create the printer private key file' do
+          expect(chef_run).to create_file('/home/printer/.ssh/id_rsa').with(
+            :owner => 'printer',
+            :group => 'printer',
+            :mode => 0600
+          )
+        end
+
+        it 'should create the printer public key file' do
+          expect(chef_run).to create_file('/home/printer/.ssh/id_rsa.pub').with(
+            :owner => 'printer',
+            :group => 'printer',
+            :mode => 0744
+          )
+        end
       end
     end
   end

@@ -1,0 +1,15 @@
+{
+  "id": "printer",
+  "name": {
+    "encrypted_data": "3sOgjUTNdbuazxY47Tw6tbkEl1EAQuw9sfmdKUm2/dItH+gYZhgvGXEzCExH\nSFNP\n",
+    "iv": "abMzn0GmoGgYlZ2cKCFalw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "private_key": {
+    "encrypted_data": "cybZkb0fgdydrNchxsjYEu5CSHDrVs12UYiE+7M/rUAg+oWfAXngrFinKgzm\np8rvMyqazmx2+n67VSLKFj4CrlHg5eXdHeTEHNcgL8wpthDun4wpT9TyCI5W\nnEr4Hm/+\n",
+    "iv": "w2jkqO9CR5f3mVvGEVS0gw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "printer",
+  "ssh_keys": [
+    "ssh-rsa TESTKEY=="
+  ],
+  "groups": [
+    "printer"
+  ],
+  "shell": "/bin/bash"
+}

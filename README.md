@@ -1,6 +1,6 @@
 # Description
 
-This is a skeleton
+sets up the mole host
 
 # Requirements
 
@@ -10,7 +10,8 @@ This is a skeleton
 
 ## Cookbooks:
 
-*No dependencies defined*
+* users
+* sudo
 
 # Attributes
 

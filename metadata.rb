@@ -11,3 +11,6 @@ supports 'ubuntu', '= 14.04'
 provides 'optoro_mole::default'
 
 recipe 'optoro_mole::default', 'This is the default recipe for optoro_mole'
+
+depends 'users'
+depends 'sudo'
