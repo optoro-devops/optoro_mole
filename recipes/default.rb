@@ -23,3 +23,9 @@ file "#{printer_private_key['name']}.pub" do
   content public_key_file
   mode 0744
 end
+
+cookbook_file '/home/ubuntu/kill-less-reaper.rb' do
+  owner 'ubuntu'
+  group 'ubuntu'
+  mode 0755
+end
