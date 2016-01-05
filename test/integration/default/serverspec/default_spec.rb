@@ -19,4 +19,11 @@ describe 'printer user' do
     it { should be_owned_by 'printer' }
     it { should be_grouped_into 'printer' }
   end
+
+  describe file('/home/ubuntu/kill-less-reaper.rb') do
+    it { should exist }
+    it { should be_owned_by 'ubuntu' }
+    it { should be_grouped_into 'ubuntu' }
+    it { should be_mode 755 }
+  end
 end
