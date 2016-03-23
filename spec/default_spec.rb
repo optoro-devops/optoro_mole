@@ -16,17 +16,30 @@ describe 'optoro_mole::default' do
 
         it 'should create the printer private key file' do
           expect(chef_run).to create_file('/home/printer/.ssh/id_rsa').with(
-            :owner => 'printer',
-            :group => 'printer',
-            :mode => 0600
+            owner: 'printer',
+            group: 'printer',
+            mode: 0600
           )
         end
 
         it 'should create the printer public key file' do
           expect(chef_run).to create_file('/home/printer/.ssh/id_rsa.pub').with(
-            :owner => 'printer',
-            :group => 'printer',
-            :mode => 0744
+            owner: 'printer',
+            group: 'printer',
+            mode: 0744
+          )
+        end
+
+        it 'should create the reaper script file' do
+          expect(chef_run).to render_file('/usr/local/bin/kill-less-reaper.rb')
+        end
+
+        it 'should create a cron job to reap stale connections' do
+          expect(chef_run).to create_cron('kill-less-reaper').with(
+            user: 'root',
+            hour: '1',
+            minute: '0',
+            command: '/usr/local/bin/kill-less-reaper.rb'
           )
         end
       end

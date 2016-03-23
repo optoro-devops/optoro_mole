@@ -24,8 +24,15 @@ file "#{printer_private_key['name']}.pub" do
   mode 0744
 end
 
-cookbook_file '/home/ubuntu/kill-less-reaper.rb' do
-  owner 'ubuntu'
-  group 'ubuntu'
+cookbook_file '/usr/local/bin/kill-less-reaper.rb' do
+  owner 'root'
+  group 'root'
   mode 0755
+end
+
+cron 'kill-less-reaper' do
+  user 'root'
+  hour 1
+  minute 0
+  command '/usr/local/bin/kill-less-reaper.rb'
 end
