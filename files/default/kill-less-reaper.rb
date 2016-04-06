@@ -70,7 +70,7 @@ sshds_map_with_times.keys.each do |ip|
       parent_pid = nil
       begin
         port = command.match(/echo\s(\d+)\s>/)[1]
-        pid_keeping_connection_open = `sudo netstat -tnpa | grep #{port}`.match(/\s(\d+)\/sshd:/)[1]
+        pid_keeping_connection_open = `sudo netstat -tnpa | grep #{port}`.match(%r{\s(\d+)\/sshd:})[1]
         parent_pid = `sudo ps --pid #{pid_keeping_connection_open} -o ppid --no-headers`.strip
       rescue # rubocop:disable HandleExceptions
       end
