@@ -20,10 +20,14 @@ describe 'printer user' do
     it { should be_grouped_into 'printer' }
   end
 
-  describe file('/home/ubuntu/kill-less-reaper.rb') do
+  describe file('/usr/local/bin/kill-less-reaper.rb') do
     it { should exist }
-    it { should be_owned_by 'ubuntu' }
-    it { should be_grouped_into 'ubuntu' }
+    it { should be_owned_by 'root' }
+    it { should be_grouped_into 'root' }
     it { should be_mode 755 }
+  end
+
+  describe cron('kill-less-reaper') do
+    it { should have_entry('0 1 * * * /usr/local/bin/kill-less-reaper.rb').with_user('root') }
   end
 end
