@@ -8,3 +8,6 @@ IfUnlessModifier:
   Enabled: false
 FileName:
   Enabled: false
+AllCops:
+  Exclude:
+    - Guardfile

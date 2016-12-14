@@ -1,17 +1,17 @@
 GEM
-  remote: https://rubygems.org/
   remote: http://gems.optoro.io/
   specs:
+    CFPropertyList (2.3.2)
     addressable (2.3.8)
     ast (2.2.0)
     astrolabe (1.3.1)
       parser (~> 2.2)
-    aws-sdk (2.2.8)
-      aws-sdk-resources (= 2.2.8)
-    aws-sdk-core (2.2.8)
+    aws-sdk (2.2.32)
+      aws-sdk-resources (= 2.2.32)
+    aws-sdk-core (2.2.32)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.2.8)
-      aws-sdk-core (= 2.2.8)
+    aws-sdk-resources (2.2.32)
+      aws-sdk-core (= 2.2.32)
     berkshelf (4.0.1)
       addressable (~> 2.3.4)
       berkshelf-api-client (~> 2.0)
@@ -40,58 +40,197 @@ GEM
     buff-ruby_engine (0.1.0)
     buff-shell_out (0.2.0)
       buff-ruby_engine (~> 0.1.0)
+    builder (3.2.2)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     celluloid-io (0.16.2)
       celluloid (>= 0.16.0)
       nio4r (>= 1.1.0)
-    chef (11.18.12)
-      chef-zero (~> 2.2, >= 2.2.1)
+    chef (12.6.0)
+      chef-config (= 12.6.0)
+      chef-zero (~> 4.2, >= 4.2.2)
       diff-lcs (~> 1.2, >= 1.2.4)
       erubis (~> 2.7)
-      ffi-yajl (~> 1.2)
+      ffi-yajl (~> 2.2)
       highline (~> 1.6, >= 1.6.9)
-      mime-types (~> 1.16)
       mixlib-authentication (~> 1.3)
       mixlib-cli (~> 1.4)
-      mixlib-config (~> 2.0)
       mixlib-log (~> 1.3)
-      mixlib-shellout (~> 1.4)
+      mixlib-shellout (~> 2.0)
       net-ssh (~> 2.6)
       net-ssh-multi (~> 1.1)
-      ohai (~> 7.4)
+      ohai (>= 8.6.0.alpha.1, < 9)
       plist (~> 3.1.0)
+      proxifier (~> 1.0)
       pry (~> 0.9)
-      rest-client (>= 1.0.4, <= 1.6.7)
-    chef-zero (2.2.1)
-      ffi-yajl (~> 1.1)
-      hashie (~> 2.0)
+      rspec-core (~> 3.4)
+      rspec-expectations (~> 3.4)
+      rspec-mocks (~> 3.4)
+      rspec_junit_formatter (~> 0.2.0)
+      serverspec (~> 2.7)
+      specinfra (~> 2.10)
+      syslog-logger (~> 1.6)
+    chef-config (12.6.0)
+      mixlib-config (~> 2.0)
+      mixlib-shellout (~> 2.0)
+    chef-rewind (0.0.9)
+    chef-zero (4.4.2)
+      ffi-yajl (~> 2.2)
+      hashie (>= 2.0, < 4.0)
       mixlib-log (~> 1.3)
       rack
-    chefspec (4.3.0)
+      uuidtools (~> 2.1)
+    chefspec (4.5.0)
       chef (>= 11.14)
-      fauxhai (~> 2.0)
+      fauxhai (~> 3.0, >= 3.0.1)
       rspec (~> 3.0)
-    childprocess (0.5.8)
+    childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     cleanroom (1.0.0)
-    coderay (1.1.0)
-    dep-selector-libgecode (1.0.2)
+    coderay (1.1.1)
+    dep-selector-libgecode (1.2.0)
     dep_selector (1.0.3)
       dep-selector-libgecode (~> 1.0)
       ffi (~> 1.9)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    excon (0.45.4)
+    excon (0.49.0)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
-    fauxhai (2.3.0)
+    fauxhai (3.2.0)
       net-ssh
-      ohai
     ffi (1.9.10)
-    ffi-yajl (1.4.0)
-      ffi (~> 1.5)
+    ffi-yajl (2.2.3)
       libyajl2 (~> 1.2)
+    fission (0.5.0)
+      CFPropertyList (~> 2.2)
+    fog (1.38.0)
+      fog-aliyun (>= 0.1.0)
+      fog-atmos
+      fog-aws (>= 0.6.0)
+      fog-brightbox (~> 0.4)
+      fog-cloudatcost (~> 0.1.0)
+      fog-core (~> 1.32)
+      fog-dynect (~> 0.0.2)
+      fog-ecloud (~> 0.1)
+      fog-google (<= 0.1.0)
+      fog-json
+      fog-local
+      fog-openstack
+      fog-powerdns (>= 0.1.1)
+      fog-profitbricks
+      fog-rackspace
+      fog-radosgw (>= 0.0.2)
+      fog-riakcs
+      fog-sakuracloud (>= 0.0.4)
+      fog-serverlove
+      fog-softlayer
+      fog-storm_on_demand
+      fog-terremark
+      fog-vmfusion
+      fog-voxel
+      fog-vsphere (>= 0.4.0)
+      fog-xenserver
+      fog-xml (~> 0.1.1)
+      ipaddress (~> 0.5)
+    fog-aliyun (0.1.0)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      ipaddress (~> 0.8)
+      xml-simple (~> 1.1)
+    fog-atmos (0.1.0)
+      fog-core
+      fog-xml
+    fog-aws (0.9.2)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-brightbox (0.10.1)
+      fog-core (~> 1.22)
+      fog-json
+      inflecto (~> 0.0.2)
+    fog-cloudatcost (0.1.2)
+      fog-core (~> 1.36)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-core (1.37.0)
+      builder
+      excon (~> 0.45)
+      formatador (~> 0.2)
+    fog-dynect (0.0.3)
+      fog-core
+      fog-json
+      fog-xml
+    fog-ecloud (0.3.0)
+      fog-core
+      fog-xml
+    fog-google (0.1.0)
+      fog-core
+      fog-json
+      fog-xml
+    fog-json (1.0.2)
+      fog-core (~> 1.0)
+      multi_json (~> 1.10)
+    fog-local (0.3.0)
+      fog-core (~> 1.27)
+    fog-openstack (0.1.2)
+      fog-core (>= 1.35)
+      fog-json (>= 1.0)
+      fog-xml (>= 0.1)
+      ipaddress (>= 0.8)
+    fog-powerdns (0.1.1)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+    fog-profitbricks (0.0.5)
+      fog-core
+      fog-xml
+      nokogiri
+    fog-rackspace (0.1.1)
+      fog-core (>= 1.35)
+      fog-json (>= 1.0)
+      fog-xml (>= 0.1)
+      ipaddress (>= 0.8)
+    fog-radosgw (0.0.5)
+      fog-core (>= 1.21.0)
+      fog-json
+      fog-xml (>= 0.0.1)
+    fog-riakcs (0.1.0)
+      fog-core
+      fog-json
+      fog-xml
+    fog-sakuracloud (1.7.5)
+      fog-core
+      fog-json
+    fog-serverlove (0.1.2)
+      fog-core
+      fog-json
+    fog-softlayer (1.1.0)
+      fog-core
+      fog-json
+    fog-storm_on_demand (0.1.1)
+      fog-core
+      fog-json
+    fog-terremark (0.1.0)
+      fog-core
+      fog-xml
+    fog-vmfusion (0.1.0)
+      fission
+      fog-core
+    fog-voxel (0.1.0)
+      fog-core
+      fog-xml
+    fog-vsphere (0.6.3)
+      fog-core
+      rbvmomi (~> 1.8)
+    fog-xenserver (0.2.3)
+      fog-core
+      fog-xml
+    fog-xml (0.1.2)
+      fog-core
+      nokogiri (~> 1.5, >= 1.5.11)
     foodcritic (5.0.0)
       erubis
       gherkin (~> 2.11)
@@ -100,10 +239,11 @@ GEM
       rufus-lru (~> 1.0)
       treetop (~> 1.4)
       yajl-ruby (~> 1.1)
-    foodcritic-rules-optoro (0.0.5)
+    foodcritic-rules-optoro (0.0.6)
     formatador (0.2.5)
     gherkin (2.12.2)
       multi_json (~> 1.3)
+    git (1.3.0)
     guard (2.13.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
@@ -125,21 +265,24 @@ GEM
     guard-kitchen (0.0.2)
       guard
       mixlib-shellout
-    guard-rspec (4.6.4)
+    guard-rspec (4.6.5)
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     guard-rubocop (1.2.0)
       guard (~> 2.0)
       rubocop (~> 0.20)
-    hashie (2.1.2)
+    hashie (3.4.3)
     highline (1.7.8)
     hitimes (1.2.3)
     httpclient (2.6.0.1)
+    inflecto (0.0.2)
     iniparse (1.4.2)
-    ipaddress (0.8.2)
-    jmespath (1.1.3)
+    ipaddress (0.8.3)
+    jmespath (1.2.4)
+      json_pure (>= 1.8.1)
     json (1.8.3)
+    json_pure (1.8.3)
     kitchen-docker (1.5.0)
       test-kitchen (>= 1.0.0)
     kitchen-ec2 (0.10.0)
@@ -147,9 +290,12 @@ GEM
       excon
       multi_json
       test-kitchen (~> 1.4, >= 1.4.1)
+    kitchen-joyent (0.2.2)
+      fog (~> 1.28)
+      test-kitchen (~> 1.3)
     kitchen-vagrant (0.19.0)
       test-kitchen (~> 1.4)
-    knife-cookbook-doc (0.16.0)
+    knife-cookbook-doc (0.17.0)
       chef
       erubis
     knife-solo (0.4.2)
@@ -158,72 +304,79 @@ GEM
       net-ssh (>= 2.2.2, < 3.0)
     knife-solo_data_bag (1.1.0)
     libyajl2 (1.2.0)
-    listen (3.0.5)
+    listen (3.0.6)
       rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
+      rb-inotify (>= 0.9.7)
     lumberjack (1.0.10)
     method_source (0.8.2)
-    mime-types (1.25.1)
     mini_portile2 (2.0.0)
     minitar (0.5.4)
-    mixlib-authentication (1.3.0)
+    mixlib-authentication (1.4.0)
       mixlib-log
+      rspec-core (~> 3.2)
+      rspec-expectations (~> 3.2)
+      rspec-mocks (~> 3.2)
     mixlib-cli (1.5.0)
     mixlib-config (2.2.1)
     mixlib-log (1.6.0)
-    mixlib-shellout (1.6.1)
+    mixlib-shellout (2.2.6)
     multi_json (1.11.2)
     multipart-post (2.0.0)
-    nenv (0.2.0)
+    nenv (0.3.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (2.9.2)
+    net-ssh (2.9.4)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     net-ssh-multi (1.2.1)
       net-ssh (>= 2.6.5)
       net-ssh-gateway (>= 1.2.0)
-    nio4r (1.2.0)
-    nokogiri (1.6.7.1)
+    net-telnet (0.1.1)
+    nio4r (1.2.1)
+    nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
     octokit (3.8.0)
       sawyer (~> 0.6.0, >= 0.5.3)
-    ohai (7.4.1)
+    ohai (8.13.0)
+      chef-config (>= 12.5.0.alpha.1, < 13)
       ffi (~> 1.9)
-      ffi-yajl (~> 1.1)
+      ffi-yajl (~> 2.2)
       ipaddress
-      mime-types (~> 1.16)
       mixlib-cli
       mixlib-config (~> 2.0)
       mixlib-log
-      mixlib-shellout (~> 1.2)
+      mixlib-shellout (~> 2.0)
+      plist (~> 3.1)
       systemu (~> 2.6.4)
       wmi-lite (~> 1.0)
-    overcommit (0.30.0)
-      childprocess (~> 0.5.6)
+    overcommit (0.33.0)
+      childprocess (~> 0.5.8)
       iniparse (~> 1.4)
-    parser (2.3.0.pre.6)
+    parser (2.3.0.7)
       ast (~> 2.2)
     plist (3.1.0)
     polyglot (0.3.5)
-    powerpack (0.0.9)
+    powerpack (0.1.1)
+    proxifier (1.0.3)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.6.4)
-    rainbow (2.0.0)
-    rake (10.4.2)
+    rainbow (2.1.0)
+    rake (11.1.2)
     rb-fsevent (0.9.7)
-    rb-inotify (0.9.5)
+    rb-inotify (0.9.7)
       ffi (>= 0.5.0)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
+    rbvmomi (1.8.2)
+      builder
+      nokogiri (>= 1.4.1)
+      trollop
     retryable (2.0.3)
-    ridley (4.3.2)
+    ridley (4.4.2)
       addressable
       buff-config (~> 1.0)
       buff-extensions (~> 1.0)
@@ -231,6 +384,7 @@ GEM
       buff-shell_out (~> 0.1)
       celluloid (~> 0.16.0)
       celluloid-io (~> 0.16.1)
+      chef-config
       erubis
       faraday (~> 0.9.0)
       hashie (>= 2.0.2, < 4.0.0)
@@ -240,24 +394,34 @@ GEM
       retryable (~> 2.0)
       semverse (~> 1.1)
       varia_model (~> 0.4.0)
-    rspec (3.1.0)
-      rspec-core (~> 3.1.0)
-      rspec-expectations (~> 3.1.0)
-      rspec-mocks (~> 3.1.0)
-    rspec-core (3.1.7)
-      rspec-support (~> 3.1.0)
-    rspec-expectations (3.1.2)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.1.0)
-    rspec-mocks (3.1.3)
-      rspec-support (~> 3.1.0)
-    rspec-support (3.1.2)
-    rubocop (0.27.1)
+      rspec-support (~> 3.4.0)
+    rspec-its (1.2.0)
+      rspec-core (>= 3.0.0)
+      rspec-expectations (>= 3.0.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-retry (0.4.5)
+      rspec-core
+    rspec-support (3.4.1)
+    rspec_junit_formatter (0.2.3)
+      builder (< 4)
+      rspec-core (>= 2, < 4, != 2.12.0)
+    rubocop (0.35.1)
       astrolabe (~> 1.3)
-      parser (>= 2.2.0.pre.7, < 3.0)
-      powerpack (~> 0.0.6)
+      parser (>= 2.2.3.0, < 3.0)
+      powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
-      ruby-progressbar (~> 1.4)
+      ruby-progressbar (~> 1.7)
+      tins (<= 1.6.0)
     ruby-progressbar (1.7.5)
     rufus-lru (1.0.5)
     safe_yaml (1.0.4)
@@ -265,11 +429,23 @@ GEM
       addressable (~> 2.3.5)
       faraday (~> 0.8, < 0.10)
     semverse (1.2.1)
+    serverspec (2.31.1)
+      multi_json
+      rspec (~> 3.0)
+      rspec-its
+      specinfra (~> 2.53)
+    sfl (2.2)
     shellany (0.0.1)
     slop (3.6.0)
     solve (1.2.1)
       dep_selector (~> 1.0)
       semverse (~> 1.1)
+    specinfra (2.56.0)
+      net-scp
+      net-ssh (>= 2.7, < 4.0)
+      net-telnet
+      sfl
+    syslog-logger (1.6.8)
     systemu (2.6.5)
     test-kitchen (1.4.2)
       mixlib-shellout (>= 1.2, < 3.0)
@@ -280,12 +456,16 @@ GEM
     thor (0.19.1)
     timers (4.0.4)
       hitimes
-    treetop (1.6.3)
+    tins (1.6.0)
+    treetop (1.6.5)
       polyglot (~> 0.3)
+    trollop (2.1.2)
+    uuidtools (2.1.5)
     varia_model (0.4.1)
       buff-extensions (~> 1.0)
       hashie (>= 2.0.2, < 4.0.0)
     wmi-lite (1.0.0)
+    xml-simple (1.1.5)
     yajl-ruby (1.2.1)
 
 PLATFORMS
@@ -293,10 +473,13 @@ PLATFORMS
 
 DEPENDENCIES
   berkshelf (~> 4.0.1)
-  chef-zero (~> 2.2.1)
-  chefspec (~> 4.3.0)
+  chef (~> 12.6.0)
+  chef-rewind
+  chef-zero (~> 4.4.0)
+  chefspec (~> 4.5.0)
   foodcritic (~> 5.0.0)
   foodcritic-rules-optoro
+  git
   guard
   guard-bundler
   guard-foodcritic
@@ -305,13 +488,15 @@ DEPENDENCIES
   guard-rubocop
   kitchen-docker (~> 1.5.0)
   kitchen-ec2 (~> 0.10.0)
+  kitchen-joyent (~> 0.2.2)
   kitchen-vagrant (~> 0.19.0)
-  knife-cookbook-doc (~> 0.16.0)
+  knife-cookbook-doc (~> 0.17.0)
   knife-solo (= 0.4.2)
   knife-solo_data_bag (= 1.1.0)
   overcommit
-  rspec (~> 3.1.0)
-  rubocop (~> 0.27.1)
+  rspec (~> 3.4.0)
+  rspec-retry (~> 0.4.5)
+  rubocop (~> 0.35.1)
   test-kitchen (~> 1.4.0)
   thor
 
